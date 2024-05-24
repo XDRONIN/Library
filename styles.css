@@ -69,6 +69,7 @@ body {
 
 .popup {
   display: flex;
+  color: white;
   background-color: #2e8644;
   justify-content: center;
   flex-direction: row;
@@ -82,11 +83,18 @@ body {
   font-size: 30px;
   opacity: 0%;
   transition: top 250ms ease-in-out 250ms;
+  background-color: rgba(255, 255, 255, 0.074);
+  border: 1px solid rgba(255, 255, 255, 0.222);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(12px);
+  border-radius: 0.7rem;
+  transition: all ease 0.3s;
 }
 .popup.active {
   top: 50%;
   opacity: 100%;
   transition: top 250ms ease-in-out 250ms;
+  z-index: 1;
 }
 input {
   display: block;
@@ -157,9 +165,9 @@ input {
   align-items: center;
   position: relative;
   padding: 0.6em 2em;
-  border: mediumspringgreen solid 0.15em;
+  border: rgb(199, 241, 225) solid 0.15em;
   border-radius: 0.25em;
-  color: mediumspringgreen;
+  color: rgb(199, 241, 225);
   font-size: 30px;
   margin-left: 7%;
   font-weight: 400;
@@ -187,10 +195,10 @@ input {
   position: absolute;
   width: 9em;
   aspect-ratio: 1;
-  background: mediumspringgreen;
+  background: rgb(199, 241, 225);
   opacity: 50%;
   border-radius: 50%;
-  transition: transform 500ms, background 300ms;
+  transition: transform 500ms;
 }
 
 .submit::before {
@@ -292,16 +300,18 @@ input {
 }
 .bookInfo {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   flex-direction: row;
 
-  width: 100vh;
+  width: 100%;
   height: 100vh;
 }
 
 .card {
   display: flex;
   flex-wrap: wrap;
+  margin-top: 30px;
   color: white;
   flex-direction: row;
   justify-content: space-around;
@@ -309,7 +319,7 @@ input {
   position: relative;
   font-size: x-large;
   width: 11.875em;
-  height: 15.875em;
+  height: 16.875em;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.074);
   border: 1px solid rgba(255, 255, 255, 0.222);
@@ -317,6 +327,7 @@ input {
   backdrop-filter: blur(6px);
   border-radius: 0.7rem;
   transition: all ease 0.3s;
+  overflow: auto;
 }
 .card:hover {
   box-shadow: 0px 0px 20px 1px #ffbb763f;
@@ -329,4 +340,30 @@ input {
   margin-top: 10%;
   justify-content: center;
   text-align: center;
+}
+
+.card {
+  --sb-track-color: #f9f9f9;
+  --sb-thumb-color: #e6e6e6;
+  --sb-size: 1px;
+}
+
+.card::-webkit-scrollbar {
+  width: var(--sb-size);
+}
+
+card::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 11px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 100rem;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .card {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
 }
