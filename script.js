@@ -10,7 +10,7 @@ form.addEventListener("submit", (e) => {
   const fd = new FormData(form);
   const dataobj = Object.fromEntries(fd);
   form.reset();
-  console.log(dataobj);
+
   createCard(dataobj);
 });
 
@@ -18,15 +18,23 @@ const infoDiv = document.querySelector(".bookInfo");
 function createCard(dataobj) {
   const cardDiv = document.createElement("div");
   cardDiv.classList.add("card");
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("newDiv");
 
   let valuesString = "";
   for (var key in dataobj) {
     if (dataobj.hasOwnProperty(key)) {
-      valuesString += key + dataobj[key] + "<br>";
+      if (key == "title") {
+        cardDiv.innerHTML = `<h1>${dataobj[key]}</h1><br>`;
+      } else if (key == "radio") {
+        valuesString += "<br>" + dataobj[key] + "<br>";
+      } else {
+        valuesString += "<br>" + key + "     " + dataobj[key] + "<br>";
+      }
     }
   }
-
-  cardDiv.innerHTML = valuesString;
+  newDiv.innerHTML += valuesString;
+  cardDiv.appendChild(newDiv);
   infoDiv.appendChild(cardDiv);
   document.appendChild(infoDiv);
 }

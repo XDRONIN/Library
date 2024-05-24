@@ -303,8 +303,11 @@ input {
   display: flex;
   flex-wrap: wrap;
   color: white;
+  flex-direction: row;
+  justify-content: space-around;
+  justify-content: center;
   position: relative;
-  font-family: sans-serif;
+  font-size: x-large;
   width: 11.875em;
   height: 15.875em;
   padding: 1rem;
@@ -318,4 +321,12 @@ input {
 .card:hover {
   box-shadow: 0px 0px 20px 1px #ffbb763f;
   border: 1px solid rgba(255, 255, 255, 0.454);
+}
+.newDiv {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  margin-top: 10%;
+  justify-content: center;
+  text-align: center;
 }
