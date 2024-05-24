@@ -5,12 +5,15 @@ addButton.addEventListener("click", () => {
 const form = document.getElementById("form");
 
 form.addEventListener("submit", (e) => {
+  document.querySelector(".popup").classList.remove("active");
   e.preventDefault();
   const fd = new FormData(form);
   const dataobj = Object.fromEntries(fd);
+  form.reset();
   console.log(dataobj);
   createCard(dataobj);
 });
+
 const infoDiv = document.querySelector(".bookInfo");
 function createCard(dataobj) {
   const cardDiv = document.createElement("div");

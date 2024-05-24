@@ -74,11 +74,12 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
-  opacity: transparent;
+  opacity: 0%;
   transition: top 250ms ease-in-out 250ms;
 }
 .popup.active {
   top: 50%;
+  opacity: 100%;
   transition: top 250ms ease-in-out 250ms;
 }
 input {
@@ -289,9 +290,11 @@ input {
   flex-direction: row;
 
   width: 100vh;
-  height: fit-content;
+  height: 100vh;
 }
 .card {
   height: fit-content;
   width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
 }
