@@ -70,10 +70,16 @@ body {
   height: 550px;
   padding: 2%;
   position: absolute;
-  top: 50%;
+  top: -150%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 30px;
+  opacity: transparent;
+  transition: top 250ms ease-in-out 250ms;
+}
+.popup.active {
+  top: 50%;
+  transition: top 250ms ease-in-out 250ms;
 }
 input {
   display: block;

@@ -30,26 +30,26 @@
       </button>
     </div>
     <div class="popup">
-      <form target="script.js" method="post">
+      <form target="script.js" method="post" id="form">
         <h1>Add A Book</h1>
         <label for="title">Title:</label>
-        <input id="title" type="text" />
+        <input id="title" name="title" type="text" />
         <label for="author">Author:</label>
-        <input id="author" type="text" />
+        <input id="author" name="author" type="text" />
         <label for="pages">No.Pg:</label>
-        <input id="pages" type="number" />
+        <input id="pages" name="pages" type="number" />
         <div class="radio-input">
           <label for="read">Read</label>
 
           <input
-            id="read"
+            value="read"
             name="radio"
             type="radio"
             class="readstatus"
             checked=""
           />
           <label for="notread">Not Read</label>
-          <input id="notread" name="radio" type="radio" class="readstatus" />
+          <input value="notread" name="radio" type="radio" class="readstatus" />
         </div>
         <div class="rating">
           <input type="radio" id="star5" name="rate" value="5" />
