@@ -9,4 +9,12 @@ form.addEventListener("submit", (e) => {
   const fd = new FormData(form);
   const dataobj = Object.fromEntries(fd);
   console.log(dataobj);
+  createCard();
 });
+const infoDiv = document.querySelector(".bookInfo");
+function createCard() {
+  const cardDiv = document.createElement("div");
+  cardDiv.classList.add("card");
+  infoDiv.appendChild(cardDiv);
+  document.appendChild(infoDiv);
+}

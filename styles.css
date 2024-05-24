@@ -283,3 +283,16 @@ input {
 .rating {
   margin-right: 20%;
 }
+.bookInfo {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+
+  width: 100vh;
+  height: fit-content;
+}
+.card {
+  background-color: #212121;
+  height: fit-content;
+  width: fit-content;
+}
