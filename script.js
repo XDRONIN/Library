@@ -13,7 +13,6 @@ form.addEventListener("submit", (e) => {
 
   createCard(dataobj);
 });
-
 const infoDiv = document.querySelector(".bookInfo");
 function createCard(dataobj) {
   const cardDiv = document.createElement("div");
@@ -25,11 +24,8 @@ function createCard(dataobj) {
   dltButton.addEventListener("click", () => {
     infoDiv.removeChild(cardDiv);
   });
-  const rtoggle = document.createElement("button");
-  rtoggle.classList.add("rtoggle");
 
   let valuesString = "";
-
   for (var key in dataobj) {
     if (dataobj.hasOwnProperty(key)) {
       if (key == "title") {
@@ -37,13 +33,15 @@ function createCard(dataobj) {
       } else if (key == "radio") {
         valuesString += "<br>" + dataobj[key] + "<br>";
       } else {
-        valuesString += "<br>" + key + "     " + dataobj[key] + "<br>";
+        valuesString += "<br>" + key + "  :    " + dataobj[key] + "<br>";
       }
     }
   }
 
   newDiv.innerHTML += valuesString;
+
   cardDiv.appendChild(newDiv);
+
   cardDiv.appendChild(dltButton);
   infoDiv.appendChild(cardDiv);
 }
