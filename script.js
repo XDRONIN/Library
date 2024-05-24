@@ -20,8 +20,16 @@ function createCard(dataobj) {
   cardDiv.classList.add("card");
   const newDiv = document.createElement("div");
   newDiv.classList.add("newDiv");
+  const dltButton = document.createElement("button");
+  dltButton.classList.add("dltButton");
+  dltButton.addEventListener("click", () => {
+    infoDiv.removeChild(cardDiv);
+  });
+  const rtoggle = document.createElement("button");
+  rtoggle.classList.add("rtoggle");
 
   let valuesString = "";
+
   for (var key in dataobj) {
     if (dataobj.hasOwnProperty(key)) {
       if (key == "title") {
@@ -33,8 +41,9 @@ function createCard(dataobj) {
       }
     }
   }
+
   newDiv.innerHTML += valuesString;
   cardDiv.appendChild(newDiv);
+  cardDiv.appendChild(dltButton);
   infoDiv.appendChild(cardDiv);
-  document.appendChild(infoDiv);
 }
